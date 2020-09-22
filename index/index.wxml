@@ -1,0 +1,12 @@
+<ahaha-devtools extended-tabs="{{customTabs}}">
+  <text slot="tab-content-User" style="display:block; padding: 0 10px;">
+    mid: 12321
+    token: abcd
+  </text>
+  <text slot="tab-content-Trace">
+    Trace
+  </text>
+  <text slot="tab-content-Wxml">
+    Wxml
+  </text>
+</ahaha-devtools>

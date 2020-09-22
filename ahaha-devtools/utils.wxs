@@ -1,0 +1,26 @@
+function getType(value) {
+  if (value === undefined) {
+    return 'undefined';
+  }
+
+  if (value === null) {
+    return 'null';
+  }
+
+  if (value.constructor === 'Array') {
+    return 'array';
+  }
+
+  return typeof value;
+}
+
+function isCompositeType(value) {
+  var type = getType(value);
+
+  return type === 'array' || type === 'object';
+}
+
+module.exports = {
+  getType: getType,
+  isCompositeType: isCompositeType,
+};

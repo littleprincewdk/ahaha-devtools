@@ -1,0 +1,13 @@
+:host {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}

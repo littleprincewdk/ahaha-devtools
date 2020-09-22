@@ -1,0 +1,14 @@
+<view class="container">
+  <tab-view tabs="{{tabs}}" class="tab-view">
+    <system-panel slot="tab-content-System" />
+    <network-panel slot="tab-content-Network" />
+    <appdata-panel slot="tab-content-AppData" />
+    <storage-panel slot="tab-content-Storage" />
+    <block wx:for="{{extendedTabs}}" wx:for-item="tab" wx:key="title">
+      <slot
+        name="tab-content-{{tab.title}}"
+        slot="tab-content-{{tab.title}}"
+      />
+    </block>
+  </tab-view>
+</view>

@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  padding: 10rpx 0;
+  border-top: solid 2rpx #eee;
+  border-bottom: solid 2rpx #eee;
+}
+
+.filter-input {
+  padding: 0 20rpx;
+  flex: 1;
+}
+
+.clear-btn {
+  padding: 0 20rpx;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+}
+
+.request-list {
+  height: 100%;
+  min-height: 0;
+}
+
+.request-item {
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  height: 90rpx;
+}
+
+.request-item:nth-child(2n + 1) {
+  background-color: #eee;
+}
+
+.request-item-url {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.request-item-status {
+  display: inline-block;
+  width: 70px;
+  text-align: right;
+}
+
+.request-item.pending > .request-item-status {
+  color: #aaa;
+}
+
+.request-item.fail {
+  color: red;
+}

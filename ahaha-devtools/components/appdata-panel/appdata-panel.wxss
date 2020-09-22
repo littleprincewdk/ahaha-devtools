@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 60rpx;
+}
+
+.page-route {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  line-height: 64rpx;
+  font-weight: bold;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #eee;
+}
+
+.page-data {
+  padding: 20rpx;
+  overflow-x: auto;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "ahaha-devtools",
+  "usingComponents": {
+    "ahaha-devtools": "../ahaha-devtools/ahaha-devtools"
+  }
+}

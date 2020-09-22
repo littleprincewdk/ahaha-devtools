@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  line-height: 64rpx;
+  font-weight: bold;
+  background-color: #eee;
+}
+
+.text {
+  display: block;
+  padding: 20rpx;
+}

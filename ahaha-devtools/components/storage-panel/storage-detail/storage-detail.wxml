@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="header">
+    <view class="back-btn" catchtap="handleBack"><mp-icon icon="back" size="12.5" /></view>
+  </view>
+  <scroll-view class="content" scroll-y enable-flex>
+    <view class="section-header">Key</view>
+    <input
+      class="key-input"
+      value="{{keyInput}}"
+      bindinput="handleKeyInput"
+      bindconfirm="handleEditKey"
+      bindblur="handleEditKey"
+    />
+    <view class="section-header">Type</view>
+    <text class="text">{{type}}</text>
+    <view class="section-header">Value</view>
+    <view class="value-input-wrapper">
+      <textarea
+        class="value-input"
+        maxlength="-1"
+        value="{{value}}"
+        bindinput="handleValueInput"
+        bindconfirm="handleEditValue"
+        bindblur="handleEditValue"
+      />
+    </view>
+  </scroll-view>
+</view>

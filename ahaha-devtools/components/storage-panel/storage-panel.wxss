@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  padding: 10rpx 0;
+  border-top: solid 2rpx #eee;
+  border-bottom: solid 2rpx #eee;
+}
+
+.filter-input {
+  padding: 0 20rpx;
+  flex: 1;
+}
+
+.clear-btn {
+  padding: 0 20rpx;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+}
+
+.storage-key-list {
+  height: 100%;
+  min-height: 0;
+}
+
+.storage-key-item {
+  border-bottom: solid 1rpx #eee;
+}
+
+.storage-key-item-text {
+  display: block;
+  box-sizing: border-box;
+  padding: 20rpx;
+  line-height: 50rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+.storage-key-item:last-child .storage-key-item-text {
+  height: 90rpx;
+}
+
+.storage-key-item:nth-child(2n + 1) {
+  background-color: #eee;
+}

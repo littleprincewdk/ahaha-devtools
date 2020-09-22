@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-header {
+  display: flex;
+  height: 90rpx;
+  box-shadow: #eee 0 0 2rpx 2rpx;
+}
+
+.tab-title {
+  padding: 20rpx;
+}
+
+.tab-title.active {
+  background-color: #eee;
+}
+
+.tab-content {
+  flex: 1;
+  min-height: 0;
+}

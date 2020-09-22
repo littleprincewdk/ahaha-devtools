@@ -1,0 +1,44 @@
+<wxs module="utils" src="./storage-panel.wxs" />
+
+<view class="container">
+  <view class="header">
+    <input
+      wx:if="{{!selectedKey}}"
+      class="filter-input"
+      placeholder="Filter..."
+      value="{{filterInput}}"
+      bindinput="handleFilterChange"
+    />
+    <view>当前大小: {{storageInfo.currentSize}} KB</view>
+    <icon class="clear-btn" type="clear" catchtap="handleClear" />
+  </view>
+  <view class="content">
+    <scroll-view class="storage-key-list" scroll-y>
+      <block wx:for="{{storageInfo.keys}}" wx:key="item" wx:if="{{utils.filter(filterInput, item)}}">
+        <view class="storage-key-item" data-key="{{item}}" catchtap="handleSelect">
+          <mp-slideview buttons="{{keyActions}}" data-key="{{item}}" bindbuttontap="handleKeyAction">
+            <text class="storage-key-item-text">{{item}}</text>
+          </mp-slideview>
+        </view>
+      </block>
+      <view class="storage-key-item">
+        <input
+          class="storage-key-item-text"
+          placeholder="新建..."
+          value="{{addInput}}"
+          bindinput="handleAddInput"
+          bindblur="handleAdd"
+          bindconfirm="handleAdd"
+        />
+      </view>
+    </scroll-view>
+  </view>
+
+  <storage-detail
+    wx:if="{{selectedKey}}"
+    key="{{selectedKey}}"
+    storageInfo="{{storageInfo}}"
+    bind:back="handleSelect"
+    bind:change="getStorageInfo"
+  />
+</view>

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tab-view": "./components/tab-view/tab-view",
+    "system-panel": "./components/system-panel/system-panel",
+    "network-panel": "./components/network-panel/network-panel",
+    "appdata-panel": "./components/appdata-panel/appdata-panel",
+    "storage-panel": "./components/storage-panel/storage-panel"
+  }
+}

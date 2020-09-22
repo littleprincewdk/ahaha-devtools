@@ -1,0 +1,32 @@
+<wxs module="utils" src="../../../utils.wxs" />
+
+<view class="container">
+  <view class="header">
+    <view class="back-btn" catchtap="handleBack"><mp-icon icon="back" size="12.5" /></view>
+    <view
+      wx:for="{{tabs}}"
+      wx:key="title"
+      class="tab-title {{tabIndex === index ? 'active' : ''}}"
+      data-index="{{index}}"
+      catchtap="handleSwitchTab"
+    >
+      {{item.title}}
+    </view>
+  </view>
+  <scroll-view class="content" scroll-y>
+    <block wx:if="{{tabIndex === 0}}">
+      <view class="section-header">General</view>
+      <keyvalue-list data="{{general}}" />
+      <view class="section-header">Response Headers</view>
+      <keyvalue-list data="{{responseHeaders}}" />
+      <view class="section-header">Request Headers</view>
+      <keyvalue-list data="{{requestHeaders}}" />
+    </block>
+    <block wx:if="{{tabIndex === 1}}">
+      <keyvalue-list data="{{payload}}" />
+    </block>
+    <block wx:if="{{tabIndex === 2}}">
+      <json-treeview wx:if="{{response}}" data="{{response}}" />
+    </block>
+  </scroll-view>
+</view>

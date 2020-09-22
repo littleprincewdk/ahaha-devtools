@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon",
+    "tab-view": "../../tab-view/tab-view",
+    "keyvalue-list": "../../keyvalue-list/keyvalue-list",
+    "json-treeview": "../../json-treeview/json-treeview"
+  }
+}

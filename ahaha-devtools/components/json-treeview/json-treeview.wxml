@@ -1,0 +1,8 @@
+<scroll-view class="container" scroll-y scroll-x>
+  <tree-item
+    type="{{tree.type}}"
+    key="{{tree.key}}"
+    value="{{tree.value}}"
+    isCompositeType="{{tree.isCompositeType}}"
+  />
+</scroll-view>

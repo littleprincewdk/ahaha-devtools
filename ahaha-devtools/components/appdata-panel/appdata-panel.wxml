@@ -1,0 +1,8 @@
+<wxs module="utils" src="./appdata-panel.wxs" />
+
+<view class="container">
+  <view class="content" scroll-y>
+    <view class="page-route">{{route}}</view>
+    <json-treeview data="{{currentPageData}}" />
+  </view>
+</view>

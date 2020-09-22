@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "request-detail": "./request-detail/request-detail"
+  }
+}

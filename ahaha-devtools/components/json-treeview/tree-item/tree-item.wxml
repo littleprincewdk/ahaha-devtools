@@ -1,0 +1,42 @@
+<wxs module="utils" src="../../../utils.wxs" />
+
+<view class="container">
+  <view
+    class="header {{isCompositeType && !empty ? (folded ? 'folded' : 'open') : ''}}"
+    catchtap="{{isCompositeType && !empty ? 'toggle' : ''}}"
+  >
+    <text wx:if="{{key}}" class="key" user-select space="nbsp" decode>{{key}}:&nbsp;</text>
+    <text wx:if="{{isRoot && !isCompositeType}}" class="value value-{{type}}">{{value}}</text>
+    <block wx:elif="{{!isCompositeType || empty}}">
+      <view class="value value-{{type}}">
+        <block wx:if="{{type === 'string'}}"><text user-select space="nbsp">"{{value}}"</text></block>
+        <block wx:elif="{{type === 'array'}}">[]</block>
+        <block wx:elif="{{type === 'function'}}">
+          <view class="functioin-flag">f</view> {{value}}( )
+        </block>
+        <block wx:elif="{{type === 'object'}}">{}</block>
+        <block wx:else>{{value}}</block>
+      </view>
+    </block>
+    <block wx:else>
+      <text class="prefix" space="nbsp" decode>&nbsp;{{type === 'array' ? '[' : '{'}}</text>
+      <block wx:if="{{folded}}">
+        <text class="placeholder">{{value.length}}</text>
+        <text class="suffix" space="nbsp" decode>{{type === 'array' ? ']' : '}'}}&nbsp;</text>
+      </block>
+    </block>
+  </view>
+  <block wx:if="{{isCompositeType && !empty}}">
+    <block wx:if="{{!folded}}" wx:for="{{value}}" wx:key="key">
+      <tree-item
+        type="{{item.type}}"
+        key="{{item.key}}"
+        value="{{item.value}}"
+        isCompositeType="{{item.isCompositeType}}"
+        empty="{{item.empty}}"
+        isRoot="{{false}}"
+      />
+    </block>
+    <text wx:if="{{!folded}}" class="suffix">{{type === 'array' ? ']' : '}'}}</text>
+  </block>
+</view>

@@ -1,0 +1,15 @@
+.container {
+  padding: 20rpx;
+}
+
+.item {
+  display: block;
+  font-size: 28rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.item-key {
+  font-size: 32rpx;
+  font-weight: bold;
+}

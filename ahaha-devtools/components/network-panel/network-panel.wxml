@@ -1,0 +1,48 @@
+<wxs module="utils" src="./network-panel.wxs" />
+
+<view class="container">
+  <view class="header">
+    <input
+      wx:if="{{selectedIndex === -1}}"
+      class="filter-input"
+      placeholder="Filter..."
+      value="{{filterInput}}"
+      bindinput="handleFilterChange"
+    />
+    <icon class="clear-btn" type="clear" catchtap="handleClear" />
+  </view>
+  <view class="content">
+    <scroll-view class="request-list" scroll-y>
+      <view class="request-item">
+        <text class="request-item-url">Name</text>
+        <text class="request-item-status">Status</text>
+      </view>
+      <block
+        wx:for="{{requests}}"
+        wx:for-item="request"
+        wx:key="index"
+        wx:if="{{utils.filter(filterInput, request.options.url)}}"
+      >
+        <view class="request-item {{request.status}}" data-index="{{index}}" catchtap="handleSelect">
+          <text class="request-item-url">{{request.options.url}}</text>
+          <text wx:if="{{request.status === 'pending'}}" class="request-item-status">(pending)</text>
+          <text wx:elif="{{request.status === 'success'}}" class="request-item-status">{{request.response.statusCode}}</text>
+          <text
+            wx:elif="{{request.status === 'fail'}}"
+            class="request-item-status"
+          >{{request.response ? request.response.statusCode : '(failed)'}}
+          </text>
+        </view>
+      </block>
+      <view wx:if="{{request.length}}" class="request-item">
+        <view class="request-item-text" />
+      </view>
+    </scroll-view>
+  </view>
+
+  <request-detail
+    wx:if="{{selectedIndex !== -1}}"
+    requestIndex="{{selectedIndex}}" 
+    bind:back="handleSelect"
+  />
+</view>

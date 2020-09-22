@@ -1,0 +1,87 @@
+.container {
+  padding-left: 40rpx;
+}
+
+.header {
+  position: relative;
+}
+
+.folded::before {
+  content: '+';
+  position: absolute;
+  left: -25rpx;
+  color: green;
+}
+
+.open::before {
+  content: '-';
+  position: absolute;
+  left: -25rpx;
+  color: red;
+}
+
+.key {
+  display: inline;
+  color: #905;
+}
+
+.value {
+  display: inline;
+  color: #2aa198;
+}
+
+
+.value-string {
+  color: #183691;
+}
+
+.value-number {
+  color: #0086b3;
+}
+
+.value-boolean {
+  color: #0086b3;
+}
+
+.value-undefined {
+  color: #666;
+}
+
+.value-null {
+  color: #666;
+}
+
+.value-function {
+  color: #0086b3;
+  font-style: italic;
+}
+
+.functioin-flag {
+  display: inline;
+  color: #183691;
+}
+
+.prefix {
+  color: #2aa198;
+}
+
+.suffix {
+  color: #2aa198;
+}
+
+.placeholder {
+  color: #93a1a1;
+  font-size: 0.9em;
+}
+
+.folded .prefix {
+  color: #268bd2;
+}
+
+.folded .suffix {
+  color: #268bd2;
+}
+
+.folded .placeholder {
+  color: #268bd2;
+}

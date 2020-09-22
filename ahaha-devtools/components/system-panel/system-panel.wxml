@@ -1,0 +1,8 @@
+<view class="container">
+  <scroll-view class="content" scroll-y>
+    <view class="section-header">系统信息</view>
+    <keyvalue-list data="{{systemInfo}}" />
+    <view class="section-header">网络类型</view>
+    <text class="text" user-select space="nbsp">{{networkType}}</text>
+  </scroll-view>
+</view>
