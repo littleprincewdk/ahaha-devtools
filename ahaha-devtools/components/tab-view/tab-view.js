@@ -56,10 +56,6 @@ Component({
         return;
       }
 
-      this.setData({
-        current: index,
-      });
-
       this.createSelectorQuery()
         .select(`#tab-${index}`)
         .boundingClientRect((rect) => {
@@ -72,6 +68,14 @@ Component({
           });
         })
         .exec();
+
+      this.setData({
+        current: index,
+      });
+      this.triggerEvent('change', {
+        tab: this.data.tabs[index],
+        index,
+      });
     },
   },
 });

@@ -21,10 +21,6 @@
     </block>
   </scroll-view>
   <view class="tab-content">
-    <block wx:for="{{tabs}}" wx:for-item="tab" wx:key="title">
-      <block  wx:if="{{index === current}}">
-        <slot name="tab-content-{{tab.title}}" />
-      </block>
-    </block>
+    <slot />
   </view>
 </view>

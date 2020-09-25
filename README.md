@@ -31,15 +31,47 @@ Page({
 ```
 ```html
 <ahaha-devtools extended-tabs="{{customTabs}}">
-  <text slot="tab-content-User" style="display:block; padding: 0 10px;">
+  <text class="content" slot="tab-content-User">
     mid: 12321
     token: abcd
   </text>
-  <text slot="tab-content-Trace">
+  <text class="content" slot="tab-content-Trace">
     Trace
   </text>
-  <text slot="tab-content-Wxml">
+  <text class="content" slot="tab-content-Wxml">
     Wxml
   </text>
 </ahaha-devtools>
+```
+
+通过`slot`引入可能会有性能问题，因为即使当前不展示也会创建，如果自定义tab内容很多，有性能问题可通过控制传入的`slot`优化：
+
+```html
+<ahaha-devtools extended-tabs="{{customTabs}}" bindtabchange="handleTabChange">
+  <text wx:if="{{currentTab.title === 'User'}}" class="content" slot="tab-content-User">
+    mid: 12321
+    token: abcd
+  </text>
+  <text wx:if="{{currentTab.title === 'Trace'}}" class="content" slot="tab-content-Trace">
+    Trace
+  </text>
+  <text wx:if="{{currentTab.title === 'Wxml'}}" class="content" slot="tab-content-Wxml">
+    Wxml
+  </text>
+</ahaha-devtools>
+```
+
+```javascript
+/**
+ * e.detail {
+ *   tab, // 当前tab
+ *   index, // 当前tab索引
+ * }
+ */
+handleTabChange(e) {
+  const { tab } = e.detail;
+  this.setData({
+    currentTab: tab,
+  });
+},
 ```

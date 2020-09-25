@@ -93,6 +93,7 @@ Page({
       { title: 'Trace' },
       { title: 'Wxml' },
     ],
+    currentTab: {},
   },
 
   onLoad () {
@@ -116,4 +117,12 @@ Page({
       counter += 1;
     }, 5000)
   },
-})
+
+  
+  handleTabChange(e) {
+    const { tab } = e.detail;
+    this.setData({
+      currentTab: tab,
+    });
+  },
+});

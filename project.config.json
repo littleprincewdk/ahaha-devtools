@@ -1,7 +1,12 @@
 {
 	"description": "项目配置文件",
 	"packOptions": {
-		"ignore": []
+		"ignore": [
+			{
+        "type": "file",
+        "value": "ahaha-devtools.gif"
+      }
+		]
 	},
 	"setting": {
 		"urlCheck": false,
@@ -32,7 +37,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
-	"appid": "wx227c5bbf660e1cc8",
+	"appid": "wxd7911e4c177690e4",
 	"projectname": "ahaha-devtools",
 	"debugOptions": {
 		"hidedInDevtools": []

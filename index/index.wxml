@@ -1,12 +1,12 @@
-<ahaha-devtools extended-tabs="{{customTabs}}">
-  <text slot="tab-content-User" style="display:block; padding: 0 10px;">
+<ahaha-devtools extended-tabs="{{customTabs}}" bindtabchange="handleTabChange">
+  <text wx:if="{{currentTab.title === 'User'}}" class="content" slot="tab-content-User">
     mid: 12321
     token: abcd
   </text>
-  <text slot="tab-content-Trace">
+  <text wx:if="{{currentTab.title === 'Trace'}}" class="content" slot="tab-content-Trace">
     Trace
   </text>
-  <text slot="tab-content-Wxml">
+  <text wx:if="{{currentTab.title === 'Wxml'}}" class="content" slot="tab-content-Wxml">
     Wxml
   </text>
 </ahaha-devtools>

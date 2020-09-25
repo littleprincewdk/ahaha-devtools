@@ -19,6 +19,7 @@ Component({
 
   data: {
     tabs: defaultTabs,
+    currentTab: defaultTabs[0],
   },
 
   methods: {
@@ -29,6 +30,15 @@ Component({
           ...extendedTabs,
         ],
       });
+    },
+
+    handleTabChange(e) {
+      const { tab, index } = e.detail;
+      this.setData({
+        currentTab: tab,
+      });
+
+      this.triggerEvent('tabchange', { tab, index });
     },
   },
 });
