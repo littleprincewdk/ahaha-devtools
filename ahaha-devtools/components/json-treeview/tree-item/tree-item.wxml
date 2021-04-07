@@ -6,18 +6,18 @@
     catchtap="{{isCompositeType && !empty ? 'toggle' : ''}}"
   >
     <text wx:if="{{key}}" class="key" user-select space="nbsp" decode>{{key}}:&nbsp;</text>
-    <text wx:if="{{isRoot && !isCompositeType}}" class="value value-{{type}}">{{value}}</text>
+    <text wx:if="{{isRoot && !isCompositeType}}" class="value value-{{type}}" user-select
+      >{{value}}</text
+    >
     <block wx:elif="{{!isCompositeType || empty}}">
       <view class="value value-{{type}}">
-        <block wx:if="{{type === 'string'}}"
-          ><text user-select space="nbsp">"{{value}}"</text></block
-        >
+        <text wx:if="{{type === 'string'}}" user-select space="nbsp">"{{value}}"</text>
         <block wx:elif="{{type === 'array'}}">[]</block>
         <block wx:elif="{{type === 'function'}}">
           <view class="functioin-flag">f</view> {{value}}( )
         </block>
         <block wx:elif="{{type === 'object'}}">{}</block>
-        <block wx:else>{{value}}</block>
+        <text wx:else user-select space="nbsp">{{value}}</text>
       </view>
     </block>
     <block wx:else>

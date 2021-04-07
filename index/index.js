@@ -105,6 +105,9 @@ Page({
         url: urls[counter % 3],
         data: {
           a: 1,
+          b: {
+            c: 1,
+          },
         },
         header: {
           header1: 1,

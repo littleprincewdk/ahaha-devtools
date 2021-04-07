@@ -23,7 +23,7 @@
       <keyvalue-list data="{{requestHeaders}}" />
     </block>
     <block wx:if="{{tabIndex === 1}}">
-      <keyvalue-list data="{{payload}}" />
+      <json-treeview wx:if="{{payload}}" data="{{payload}}" />
     </block>
     <block wx:if="{{tabIndex === 2}}">
       <json-treeview wx:if="{{response}}" data="{{response}}" />
