@@ -12,10 +12,14 @@
       bindblur="handleEditKey"
     />
     <view class="section-header">Type</view>
-    <text class="text">{{type}}</text>
+    <picker bindchange="handleTypeChange" value="{{typeIndex}}" range="{{types}}">
+      <view class="text">{{types[typeIndex]}}</view>
+    </picker>
+
     <view class="section-header">Value</view>
     <view class="value-input-wrapper">
       <textarea
+        wx:if="{{types[typeIndex] === 'String' || types[typeIndex] === 'Object'}}"
         class="value-input"
         maxlength="-1"
         value="{{value}}"
@@ -23,6 +27,22 @@
         bindconfirm="handleEditValue"
         bindblur="handleEditValue"
       />
+      <input
+        wx:if="{{types[typeIndex] === 'Number'}}"
+        type="number"
+        value="{{value}}"
+        bindinput="handleValueInput"
+        bindconfirm="handleEditValue"
+        bindblur="handleEditValue"
+      />
+      <picker
+        wx:if="{{types[typeIndex] === 'Boolean'}}"
+        bindchange="handleEditValue"
+        value="{{value === booleanValues[0] ? 0 : 1}}"
+        range="{{booleanValues}}"
+      >
+        <view class="text">{{value}}</view>
+      </picker>
     </view>
   </scroll-view>
 </view>

@@ -1,3 +1,10 @@
+const typeDefaultValue = {
+  String: '',
+  Number: 0,
+  Boolean: false,
+  Object: {},
+};
+
 Component({
   properties: {
     key: {
@@ -8,9 +15,11 @@ Component({
   },
 
   data: {
+    types: Object.keys(typeDefaultValue),
+    booleanValues: [true, false],
     keyInput: '',
     value: '',
-    type: 'string',
+    typeIndex: 0,
   },
 
   attached() {
@@ -30,11 +39,28 @@ Component({
         key,
         success: ({ data: value }) => {
           this.setData({
-            value,
-            type: typeof value,
+            value: typeof value === 'object' ? JSON.stringify(value, null, 2) : String(value),
+            typeIndex: this.data.types.map((type) => type.toLowerCase()).indexOf(typeof value),
           });
         },
       });
+    },
+
+    formatValue(value, type) {
+      switch (type) {
+        case 'Number':
+          return Number(value);
+        case 'Boolean':
+          if (value === 'true') {
+            return true;
+          }
+          return false;
+        case 'Object': {
+          return JSON.parse(value);
+        }
+        default:
+          return value;
+      }
     },
 
     handleBack() {
@@ -87,6 +113,24 @@ Component({
       });
     },
 
+    handleTypeChange(e) {
+      const typeIndex = +e.detail.value;
+      if (typeIndex === this.data.typeIndex) {
+        return;
+      }
+
+      const type = this.data.types[typeIndex];
+      const value = typeDefaultValue[type];
+      this.setData({
+        typeIndex,
+        value: type === 'Object' ? JSON.stringify(value, null, 2) : String(value),
+      });
+      wx.setStorage({
+        key: this.data.keyInput,
+        data: value,
+      });
+    },
+
     handleValueInput(e) {
       const { value } = e.detail;
       this.setData({
@@ -94,15 +138,32 @@ Component({
       });
     },
 
-    handleEditValue() {
-      const { key, value } = this.data;
-      wx.setStorage({
-        key,
-        data: value,
-        success: () => {
-          this.triggerEvent('change');
-        },
-      });
+    handleEditValue(e) {
+      const { key, typeIndex, types } = this.data;
+      let { value } = this.data;
+      const type = types[typeIndex];
+      if (type === 'Boolean') {
+        value = this.data.booleanValues[e.detail.value].toString();
+        console.log(value);
+        this.setData({
+          value,
+        });
+      }
+      try {
+        const formatedValue = this.formatValue(value, type);
+        wx.setStorage({
+          key,
+          data: formatedValue,
+          success: () => {
+            this.triggerEvent('change');
+          },
+        });
+      } catch (err) {
+        wx.showToast({
+          title: '值不合法！',
+          icon: 'none',
+        });
+      }
     },
   },
 });

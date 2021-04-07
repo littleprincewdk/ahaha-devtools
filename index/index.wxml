@@ -1,3 +1,5 @@
+hello world
+
 <ahaha-devtools extended-tabs="{{customTabs}}" bindtabchange="handleTabChange">
   <text wx:if="{{currentTab.title === 'User'}}" class="content" slot="tab-content-User">
     mid: 12321 token: abcd
