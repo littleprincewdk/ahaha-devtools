@@ -1,4 +1,4 @@
-<view class="container">
+<view wx:if="{{show}}" class="container">
   <tab-view tabs="{{tabs}}" class="tab-view" bindchange="handleTabChange">
     <system-panel wx:if="{{currentTab.title === 'System'}}" />
     <network-panel wx:if="{{currentTab.title === 'Network'}}" />
@@ -12,3 +12,5 @@
     </block>
   </tab-view>
 </view>
+
+<switch bindtap="handleSwitchTap" />

@@ -1,0 +1,3 @@
+<button class="switch" style="top: {{top}}rpx; left: {{left}}rpx;" type="primary" size="mini" catchtap="handleTap" bindtouchstart="handleTouchStart" catchtouchmove="handleTouchMove" catchtouchend="handleTouchEnd">
+  ahaha
+</button>

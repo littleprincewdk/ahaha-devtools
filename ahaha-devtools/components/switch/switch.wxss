@@ -1,0 +1,5 @@
+.switch {
+  position: fixed;
+  top: calc(100vh - 200rpx);
+  left: calc(100vw - 180rpx);
+}

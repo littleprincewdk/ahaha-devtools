@@ -15,7 +15,6 @@ Component({
 
   attached() {
     this.init();
-    console.log(wx.getStorageSync(this.data.key))
   },
 
   methods: {
@@ -97,16 +96,12 @@ Component({
 
     handleEditValue() {
       const { key, value } = this.data;
-      console.error(key, value,'wwwwwwwww')
       wx.setStorage({
         key,
         data: value,
         success: () => {
           this.triggerEvent('change');
         },
-        fail() {
-          console.log('aaaaaa')
-        }
       });
     },
   },

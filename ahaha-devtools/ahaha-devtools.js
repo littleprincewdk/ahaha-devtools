@@ -20,6 +20,7 @@ Component({
   data: {
     tabs: defaultTabs,
     currentTab: defaultTabs[0],
+    show: false,
   },
 
   methods: {
@@ -40,5 +41,11 @@ Component({
 
       this.triggerEvent('tabchange', { tab, index });
     },
+
+    handleSwitchTap() {
+      this.setData({
+        show: !this.data.show,
+      });
+    }
   },
 });

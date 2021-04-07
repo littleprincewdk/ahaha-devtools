@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
+    "switch": "./components/switch/switch",
     "tab-view": "./components/tab-view/tab-view",
     "system-panel": "./components/system-panel/system-panel",
     "network-panel": "./components/network-panel/network-panel",
