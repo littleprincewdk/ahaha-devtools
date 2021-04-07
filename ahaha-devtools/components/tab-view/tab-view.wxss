@@ -11,6 +11,7 @@
 
 .tab-title {
   padding: 20rpx;
+  font-size: 32rpx;
 }
 
 .tab-title.active {
