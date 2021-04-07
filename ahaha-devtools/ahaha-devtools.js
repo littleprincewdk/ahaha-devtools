@@ -10,6 +10,8 @@ Component({
     multipleSlots: true,
   },
 
+  externalClasses: ['container-class'],
+
   properties: {
     extendedTabs: {
       type: Array,
