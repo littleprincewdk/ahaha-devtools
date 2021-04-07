@@ -23,15 +23,21 @@
         wx:key="index"
         wx:if="{{utils.filter(filterInput, request.options.url)}}"
       >
-        <view class="request-item {{request.status}}" data-index="{{index}}" catchtap="handleSelect">
-          <text class="request-item-url">{{request.options.url}}</text>
-          <text wx:if="{{request.status === 'pending'}}" class="request-item-status">(pending)</text>
-          <text wx:elif="{{request.status === 'success'}}" class="request-item-status">{{request.response.statusCode}}</text>
-          <text
-            wx:elif="{{request.status === 'fail'}}"
-            class="request-item-status"
-          >{{request.response ? request.response.statusCode : '(failed)'}}
-          </text>
+        <view
+          class="request-item {{request.status}}"
+          data-index="{{index}}"
+          catchtap="handleSelect"
+        >
+          <view class="request-item-url">{{request.options.url}}</view>
+          <view wx:if="{{request.status === 'pending'}}" class="request-item-status">
+            (pending)
+          </view>
+          <view wx:elif="{{request.status === 'success'}}" class="request-item-status">
+            {{request.response.statusCode}}
+          </view>
+          <view wx:elif="{{request.status === 'fail'}}" class="request-item-status">
+            {{request.response ? request.response.statusCode : '(failed)'}}
+          </view>
         </view>
       </block>
       <view wx:if="{{request.length}}" class="request-item">
@@ -42,7 +48,7 @@
 
   <request-detail
     wx:if="{{selectedIndex !== -1}}"
-    requestIndex="{{selectedIndex}}" 
+    requestIndex="{{selectedIndex}}"
     bind:back="handleSelect"
   />
 </view>

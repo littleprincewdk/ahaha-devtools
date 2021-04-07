@@ -30,6 +30,6 @@ Component({
       this.setData({
         folded: !this.data.folded,
       });
-    }
-  }
+    },
+  },
 });

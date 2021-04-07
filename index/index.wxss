@@ -3,6 +3,6 @@ page {
 }
 
 .content {
-  display:block;
+  display: block;
   padding: 0 10px;
 }

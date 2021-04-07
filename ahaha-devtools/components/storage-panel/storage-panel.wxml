@@ -14,9 +14,17 @@
   </view>
   <view class="content">
     <scroll-view class="storage-key-list" scroll-y>
-      <block wx:for="{{storageInfo.keys}}" wx:key="item" wx:if="{{utils.filter(filterInput, item)}}">
+      <block
+        wx:for="{{storageInfo.keys}}"
+        wx:key="item"
+        wx:if="{{utils.filter(filterInput, item)}}"
+      >
         <view class="storage-key-item" data-key="{{item}}" catchtap="handleSelect">
-          <mp-slideview buttons="{{keyActions}}" data-key="{{item}}" bindbuttontap="handleKeyAction">
+          <mp-slideview
+            buttons="{{keyActions}}"
+            data-key="{{item}}"
+            bindbuttontap="handleKeyAction"
+          >
             <text class="storage-key-item-text">{{item}}</text>
           </mp-slideview>
         </view>

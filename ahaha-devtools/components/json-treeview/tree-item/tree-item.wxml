@@ -9,7 +9,9 @@
     <text wx:if="{{isRoot && !isCompositeType}}" class="value value-{{type}}">{{value}}</text>
     <block wx:elif="{{!isCompositeType || empty}}">
       <view class="value value-{{type}}">
-        <block wx:if="{{type === 'string'}}"><text user-select space="nbsp">"{{value}}"</text></block>
+        <block wx:if="{{type === 'string'}}"
+          ><text user-select space="nbsp">"{{value}}"</text></block
+        >
         <block wx:elif="{{type === 'array'}}">[]</block>
         <block wx:elif="{{type === 'function'}}">
           <view class="functioin-flag">f</view> {{value}}( )

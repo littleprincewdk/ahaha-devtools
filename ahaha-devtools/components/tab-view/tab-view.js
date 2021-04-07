@@ -7,12 +7,10 @@ Component({
     multipleSlots: true,
   },
 
-  externalClasses: [
-    'class',
-  ],
+  externalClasses: ['class'],
 
   properties: {
-    tabs: Array
+    tabs: Array,
   },
 
   data: {
@@ -34,14 +32,16 @@ Component({
     getRect() {
       this.createSelectorQuery()
         .select('.tab-header')
-        .boundingClientRect(rect => {
+        .boundingClientRect((rect) => {
           this.rect = rect;
-        }).exec();
+        })
+        .exec();
       this.createSelectorQuery()
         .select(`#tab-${this.data.tabs.length - 1}`)
-        .boundingClientRect(rect => {
+        .boundingClientRect((rect) => {
           this.scrollWidth = rect.right;
-        }).exec();
+        })
+        .exec();
     },
 
     onScroll(e) {

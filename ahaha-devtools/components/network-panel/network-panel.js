@@ -1,9 +1,7 @@
 import requestManager from './requestManager';
 
 Component({
-  properties: {
-
-  },
+  properties: {},
 
   data: {
     filterInput: '',
@@ -92,6 +90,6 @@ Component({
       this.setData({
         selectedIndex: index,
       });
-    }
-  }
-})
+    },
+  },
+});

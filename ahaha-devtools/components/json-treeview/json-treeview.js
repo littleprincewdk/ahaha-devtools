@@ -15,21 +15,21 @@ Component({
       if (value === undefined) {
         return 'undefined';
       }
-    
+
       if (value === null) {
         return 'null';
       }
-    
+
       if (Array.isArray(value)) {
         return 'array';
       }
-    
+
       return typeof value;
     },
 
     isCompositeType(value) {
       const type = this.getType(value);
-    
+
       return type === 'array' || type === 'object';
     },
 
@@ -55,7 +55,7 @@ Component({
         };
       }
 
-      const v = Object.keys(value).map(k => this.generateTree(k, value[k]));
+      const v = Object.keys(value).map((k) => this.generateTree(k, value[k]));
       return {
         type,
         key,

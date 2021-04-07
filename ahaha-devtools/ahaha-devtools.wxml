@@ -5,10 +5,7 @@
     <appdata-panel wx:if="{{currentTab.title === 'AppData'}}" />
     <storage-panel wx:if="{{currentTab.title === 'Storage'}}" />
     <block wx:for="{{extendedTabs}}" wx:for-item="tab" wx:key="title">
-      <slot
-        wx:if="{{currentTab.title === tab.title}}"
-        name="tab-content-{{tab.title}}"
-      />
+      <slot wx:if="{{currentTab.title === tab.title}}" name="tab-content-{{tab.title}}" />
     </block>
   </tab-view>
 </view>

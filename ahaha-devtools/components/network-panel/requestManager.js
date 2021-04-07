@@ -62,7 +62,7 @@ function request(options) {
 
 function proxyRequest() {
   Object.defineProperty(wx, 'request', {
-    value: request
+    value: request,
   });
 }
 
@@ -71,7 +71,9 @@ function getRequests() {
 }
 
 function clearRequests() {
-  requests.forEach(req => req._expired = true); // 回调不再处理
+  requests.forEach((req) => {
+    req._expired = true;
+  }); // 回调不再处理
   requests = [];
 }
 

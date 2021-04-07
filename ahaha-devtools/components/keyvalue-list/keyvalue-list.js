@@ -3,11 +3,7 @@ Component({
     data: Object,
   },
 
-  data: {
-    
-  },
+  data: {},
 
-  methods: {
-
-  }
-})
+  methods: {},
+});

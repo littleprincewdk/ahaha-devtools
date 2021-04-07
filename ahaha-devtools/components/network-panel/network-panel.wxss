@@ -1,7 +1,7 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   height: 100%;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .filter-input {
-  padding: 0 20rpx;
   flex: 1;
+  padding: 0 20rpx;
 }
 
 .clear-btn {
@@ -34,8 +34,8 @@
 .request-item {
   display: flex;
   box-sizing: border-box;
-  padding: 20rpx;
   height: 90rpx;
+  padding: 20rpx;
 }
 
 .request-item:nth-child(2n + 1) {
@@ -44,10 +44,10 @@
 
 .request-item-url {
   flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .request-item-status {

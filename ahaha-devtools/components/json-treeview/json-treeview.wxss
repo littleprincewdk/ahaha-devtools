@@ -4,10 +4,10 @@
 
 .container {
   position: relative;
+  box-sizing: border-box;
   height: 100%;
   padding: 20rpx 0;
-  box-sizing: border-box;
   font-size: 28rpx;
-  line-height: 50rpx;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  line-height: 50rpx;
 }

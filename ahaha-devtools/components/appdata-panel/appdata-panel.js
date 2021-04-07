@@ -1,7 +1,5 @@
 Component({
-  properties: {
-
-  },
+  properties: {},
 
   data: {
     route: '',
@@ -19,7 +17,5 @@ Component({
     });
   },
 
-  methods: {
-
-  }
+  methods: {},
 });

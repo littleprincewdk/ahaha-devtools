@@ -7,17 +7,17 @@
 }
 
 .folded::before {
-  content: '+';
   position: absolute;
   left: -25rpx;
   color: green;
+  content: '+';
 }
 
 .open::before {
-  content: '-';
   position: absolute;
   left: -25rpx;
   color: red;
+  content: '-';
 }
 
 .key {
@@ -29,7 +29,6 @@
   display: inline;
   color: #2aa198;
 }
-
 
 .value-string {
   color: #183691;

@@ -1,5 +1,7 @@
 <view class="container">
   <block wx:for="{{data}}" wx:for-index="key" wx:for-item="value" wx:key="key">
-    <text class="item" user-select space="nbsp"><text class="item-key">{{key}}: </text>{{value}}</text>
+    <text class="item" user-select space="nbsp"
+      ><text class="item-key">{{key}}: </text>{{value}}</text
+    >
   </block>
 </view>

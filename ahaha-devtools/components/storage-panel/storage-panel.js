@@ -1,18 +1,14 @@
 Component({
-  properties: {
-
-  },
+  properties: {},
 
   data: {
     storageInfo: {
       currentSize: 0,
       keys: [],
-      limitSize: 10240
+      limitSize: 10240,
     },
     filterInput: '',
-    keyActions: [
-      { text: '删除', type: 'warn', data: { handler: 'handleRemove' } }
-    ],
+    keyActions: [{ text: '删除', type: 'warn', data: { handler: 'handleRemove' } }],
     addInput: '',
     selectedKey: '',
   },
@@ -25,7 +21,7 @@ Component({
     getStorageInfo() {
       const storageInfo = wx.getStorageInfoSync();
       this.setData({
-        storageInfo
+        storageInfo,
       });
     },
 
@@ -41,7 +37,7 @@ Component({
               },
             });
           }
-        }
+        },
       });
     },
 
@@ -54,7 +50,9 @@ Component({
 
     handleKeyAction(e) {
       const { key } = e.currentTarget.dataset;
-      const { data: { handler } } = e.detail;
+      const {
+        data: { handler },
+      } = e.detail;
       this[handler](key);
     },
 
@@ -71,7 +69,7 @@ Component({
               },
             });
           }
-        }
+        },
       });
     },
 
@@ -90,24 +88,24 @@ Component({
       }
 
       if (storageInfo.keys.includes(addInput)) {
-         wx.showToast({
-           title: 'key已存在',
-           icon: 'none'
-         });
-         return;
+        wx.showToast({
+          title: 'key已存在',
+          icon: 'none',
+        });
+        return;
       }
-      
+
       wx.setStorage({
         key: addInput,
         data: '',
         success: () => {
           this.setData({
-            addInput: ''
+            addInput: '',
           });
 
-          this.getStorageInfo()
-        }
-      })
+          this.getStorageInfo();
+        },
+      });
     },
 
     handleSelect(e) {
@@ -116,5 +114,5 @@ Component({
         selectedKey: key,
       });
     },
-  }
-})
+  },
+});

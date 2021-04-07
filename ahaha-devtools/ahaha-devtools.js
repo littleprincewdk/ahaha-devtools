@@ -9,7 +9,7 @@ Component({
   options: {
     multipleSlots: true,
   },
-  
+
   properties: {
     extendedTabs: {
       type: Array,
@@ -26,10 +26,7 @@ Component({
   methods: {
     observeExtendedTabs(extendedTabs) {
       this.setData({
-        tabs: [
-          ...defaultTabs,
-          ...extendedTabs,
-        ],
+        tabs: [...defaultTabs, ...extendedTabs],
       });
     },
 
@@ -46,6 +43,6 @@ Component({
       this.setData({
         show: !this.data.show,
       });
-    }
+    },
   },
 });

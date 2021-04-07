@@ -1,0 +1,99 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order",
+    "stylelint-prettier/recommended"
+  ],
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "unit-no-unknown": [
+      true,
+      {
+        "ignoreUnits": [
+          "rpx"
+        ]
+      }
+    ],
+    "color-hex-case": "lower",
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          "page",
+          "cover-image",
+          "cover-view",
+          "movable-area",
+          "movable-view",
+          "scroll-view",
+          "swiper",
+          "swiper-item",
+          "view",
+          "icon",
+          "progress",
+          "rich-text",
+          "text",
+          "button",
+          "checkbox",
+          "checkbox-group",
+          "editor",
+          "form",
+          "input",
+          "label",
+          "picker",
+          "picker-view",
+          "picker-view-column",
+          "radio",
+          "radio-group",
+          "slider",
+          "switch",
+          "textarea",
+          "functional-page-navigator",
+          "navigator",
+          "audio",
+          "camera",
+          "image",
+          "live-player",
+          "live-pusher",
+          "video",
+          "map",
+          "canvas",
+          "web-view",
+          "ad",
+          "official-account",
+          "open-data",
+          "wx-cover-view"
+        ]
+      }
+    ],
+    "no-empty-source": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "value-no-vendor-prefix": [
+      true,
+      {
+        "ignoreValues": [
+          "box"
+        ]
+      }
+    ],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": [
+          "box-flex",
+          "box-orient",
+          "box-pack",
+          "box-align",
+          "appearance"
+        ]
+      }
+    ],
+    "selector-no-vendor-prefix": [
+      true,
+      {
+        "ignoreSelectors": []
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 const INIT_RIGHT = 180; // rpx
 const INIT_BOTTOM = 200; // rpx
 
-const STORAGE_KEY = "ahaha-devtools/switch";
+const STORAGE_KEY = 'ahaha-devtools/switch';
 
 Component({
   data: {
@@ -46,7 +46,7 @@ Component({
     },
 
     handleTap() {
-      this.triggerEvent("tap");
+      this.triggerEvent('tap');
     },
 
     handleTouchStart(e) {

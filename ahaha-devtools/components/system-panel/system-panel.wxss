@@ -1,7 +1,7 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   height: 100%;
 }
 
@@ -14,8 +14,8 @@
   display: flex;
   align-items: center;
   padding: 0 20rpx;
-  line-height: 64rpx;
   font-weight: bold;
+  line-height: 64rpx;
   background-color: #eee;
 }
 

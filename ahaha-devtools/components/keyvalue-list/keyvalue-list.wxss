@@ -10,6 +10,6 @@
 }
 
 .item-key {
-  font-size: 32rpx;
   font-weight: bold;
+  font-size: 32rpx;
 }

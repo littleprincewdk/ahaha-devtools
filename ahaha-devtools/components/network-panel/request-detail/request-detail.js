@@ -6,11 +6,7 @@ Component({
   },
 
   data: {
-    tabs: [
-      { title: 'Headers' },
-      { title: 'Payload' },
-      { title: 'Response' },
-    ],
+    tabs: [{ title: 'Headers' }, { title: 'Payload' }, { title: 'Response' }],
     tabIndex: 0,
     general: {},
     requestHeaders: {},
@@ -59,7 +55,7 @@ Component({
       if (index !== this.data.requestIndex) {
         return;
       }
-      
+
       if (request.response) {
         const data = {
           // 没法这也样更新，会报错
@@ -83,6 +79,6 @@ Component({
       this.setData({
         tabIndex: index,
       });
-    }
-  }
-})
+    },
+  },
+});

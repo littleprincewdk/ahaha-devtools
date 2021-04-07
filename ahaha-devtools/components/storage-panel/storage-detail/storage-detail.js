@@ -58,7 +58,7 @@ Component({
       if (!keyInput) {
         wx.showToast({
           title: 'key不能为空！',
-          icon: 'none'
+          icon: 'none',
         });
         this.setData({
           keyInput: key,
@@ -67,15 +67,15 @@ Component({
       }
 
       if (storageInfo.keys.includes(keyInput)) {
-         wx.showToast({
-           title: 'key已存在！',
-           icon: 'none'
-         });
-         return;
+        wx.showToast({
+          title: 'key已存在！',
+          icon: 'none',
+        });
+        return;
       }
 
       const value = wx.getStorageSync(key);
-      
+
       wx.setStorage({
         key: keyInput,
         data: value,
@@ -83,7 +83,7 @@ Component({
           wx.removeStorageSync(key);
 
           this.triggerEvent('change');
-        }
+        },
       });
     },
 
@@ -106,4 +106,3 @@ Component({
     },
   },
 });
-
