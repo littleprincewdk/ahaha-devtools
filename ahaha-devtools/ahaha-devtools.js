@@ -44,6 +44,7 @@ Component({
     handleSwitchTap() {
       this.setData({
         show: !this.data.show,
+        currentTab: defaultTabs[0],
       });
     },
   },
