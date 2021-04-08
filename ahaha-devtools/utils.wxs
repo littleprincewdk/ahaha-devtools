@@ -20,7 +20,16 @@ function isCompositeType(value) {
   return type === 'array' || type === 'object';
 }
 
+function filter(filterText, key) {
+  if (!filterText) {
+    return true;
+  }
+
+  return key.indexOf(filterText) > -1;
+}
+
 module.exports = {
   getType: getType,
   isCompositeType: isCompositeType,
+  filter: filter,
 };

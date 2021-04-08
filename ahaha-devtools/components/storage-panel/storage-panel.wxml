@@ -1,4 +1,4 @@
-<wxs module="utils" src="./storage-panel.wxs" />
+<wxs module="utils" src="../../utils.wxs" />
 
 <view class="container">
   <view class="header">

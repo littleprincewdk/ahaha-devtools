@@ -1,4 +1,4 @@
-<wxs module="utils" src="./network-panel.wxs" />
+<wxs module="utils" src="../../utils.wxs" />
 
 <view class="container">
   <view class="header">
