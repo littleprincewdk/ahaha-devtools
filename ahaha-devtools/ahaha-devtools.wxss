@@ -1,17 +1,22 @@
 .container {
   position: fixed;
-  top: 128rpx;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   z-index: 100000;
   font-size: 28rpx;
-  background-color: #fff;
-  animation: fadeInUp 0.2s;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .tab-view {
-  height: 100%;
+  position: absolute;
+  top: 128rpx;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  animation: fadeInUp 0.2s;
 }
 
 @keyframes fadeInUp {
