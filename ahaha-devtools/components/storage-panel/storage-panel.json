@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "mp-slideview": "/miniprogram_npm/weui-miniprogram/slideview/slideview",
+    "mp-slideview": "weui-miniprogram/slideview/slideview",
     "storage-detail": "./storage-detail/storage-detail"
   }
 }
