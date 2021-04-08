@@ -1,4 +1,5 @@
 <button
+  wx:if="{{top !== undefined}}"
   class="switch"
   style="top: {{top}}rpx; left: {{left}}rpx;"
   type="primary"

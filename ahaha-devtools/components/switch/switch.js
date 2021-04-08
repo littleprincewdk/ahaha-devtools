@@ -5,8 +5,8 @@ const STORAGE_KEY = 'ahaha-devtools/switch';
 
 Component({
   data: {
-    top: 0,
-    left: 0,
+    top: undefined,
+    left: undefined,
   },
 
   created() {
@@ -15,7 +15,7 @@ Component({
     this.lastY = 0;
   },
 
-  attached() {
+  ready() {
     this.initPosition();
   },
 
