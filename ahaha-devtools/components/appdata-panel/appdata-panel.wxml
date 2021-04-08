@@ -2,7 +2,7 @@
 
 <view class="container">
   <view class="content" scroll-y>
-    <view class="page-route">{{route}}</view>
+    <view class="section-header">{{route}}</view>
     <json-treeview data="{{currentPageData}}" />
   </view>
 </view>
